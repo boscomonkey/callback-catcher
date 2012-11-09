@@ -5,6 +5,7 @@
 <table>
   <tr>
     <th>Payload</th>
+    <th>Created At</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
 <% @accesses.each do |access| %>
   <tr>
     <td><%= access.payload %></td>
+    <td><%= access.created_at %></td>
     <td><%= link_to 'Show', access %></td>
     <td><%= link_to 'Edit', edit_access_path(access) %></td>
     <td><%= link_to 'Destroy', access, method: :delete, data: { confirm: 'Are you sure?' } %></td>
