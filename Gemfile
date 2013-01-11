@@ -1,8 +1,9 @@
+#-*-ruby-*-
 source 'https://rubygems.org'
 
 gem 'jquery-rails'
 gem 'pg'
-gem 'rails', '~>3.2.8'
+gem 'rails'
 gem 'will_paginate'
 
 # Bundle edge Rails instead:
@@ -23,6 +24,8 @@ end
 group :development, :test do
   gem 'heroku'
   gem 'mysql2'
+  gem 'sqlite3'
+  gem 'taps'
 end
 
 # To use ActiveModel has_secure_password
