@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 gem 'jquery-rails'
 gem 'pg'
-gem 'rails'
+gem 'rails', '~> 3.2.15'
 gem 'will_paginate'
 
 # Bundle edge Rails instead:
