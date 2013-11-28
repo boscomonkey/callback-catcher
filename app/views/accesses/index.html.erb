@@ -4,7 +4,7 @@
 
 <table>
   <tr>
-    <th>Payload</th>
+    <th>Headers/Payload</th>
     <th>Created At</th>
     <th></th>
     <th></th>
@@ -13,7 +13,10 @@
 
 <% @accesses.each do |access| %>
   <tr>
-    <td><%= access.payload %></td>
+    <td>
+      <pre><%= access.headers %></pre>
+      <pre><%= access.payload %></pre>
+    </td>
     <td><%= access.created_at %></td>
     <td><%= link_to 'Show', access %></td>
     <td><%= link_to 'Edit', edit_access_path(access) %></td>
