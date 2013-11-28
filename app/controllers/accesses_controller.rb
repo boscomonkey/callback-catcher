@@ -39,7 +39,11 @@ class AccessesController < ApplicationController
   # POST /accesses
   # POST /accesses.json
   def create
-    @access = Access.new(payload: JSON.pretty_generate(params.to_hash))
+    # CGI headers keys start with capital letters
+    cgi_headers = request.headers.select {|key, val| key =~ /^[A-Z]/ }
+
+    @access = Access.new(headers: JSON.pretty_generate(cgi_headers.to_hash),
+                         payload: JSON.pretty_generate(params.to_hash))
 
     respond_to do |format|
       if @access.save
