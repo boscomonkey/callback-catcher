@@ -2,12 +2,9 @@
 source 'https://rubygems.org'
 
 gem 'jquery-rails'
+gem 'pg'
 gem 'rails', '~> 3.2.15'
 gem 'will_paginate'
-
-group :production do
-  gem 'pg'
-end
 
 # Gems used only for assets and not required
 # in production environments by default.
