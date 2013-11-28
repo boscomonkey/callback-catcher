@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121109043252) do
+ActiveRecord::Schema.define(:version => 20131128200126) do
 
   create_table "accesses", :force => true do |t|
     t.text     "payload"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "headers"
   end
 
   add_index "accesses", ["created_at"], :name => "index_accesses_on_created_at"
