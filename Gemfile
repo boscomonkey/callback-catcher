@@ -9,6 +9,7 @@ gem 'will_paginate'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'unicorn'
 end
 
 # Gems used only for assets and not required
@@ -26,6 +27,7 @@ end
 group :development, :test do
   gem 'annotate',	require: false
   gem 'debugger'
+  gem 'foreman',	require: false
   gem 'heroku',		require: false
   gem 'mysql2'
   gem 'sqlite3'
