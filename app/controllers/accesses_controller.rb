@@ -1,3 +1,5 @@
+require 'filter_cookie_values'
+
 class AccessesController < ApplicationController
   skip_before_filter :verify_authenticy_token, :only => [:create]
 
@@ -41,6 +43,9 @@ class AccessesController < ApplicationController
   def create
     # CGI headers keys start with capital letters
     cgi_headers = request.headers.select {|key, val| key =~ /^[A-Z]/ }
+
+    # filter HTTP_COOKIE values
+    filter_cookie_values(cgi_headers, 'HTTP_COOKIE')
 
     @access = Access.new(headers: JSON.pretty_generate(cgi_headers.to_hash),
                          payload: JSON.pretty_generate(params.to_hash))
