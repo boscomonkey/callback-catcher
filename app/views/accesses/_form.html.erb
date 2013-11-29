@@ -11,9 +11,25 @@
     </div>
   <% end %>
 
+  <style>
+    textarea {
+      font-family: monospace;
+    }
+  </style>
+
+  <%
+     textarea_cols = [20, line_length(@access.headers), line_length(@access.payload)].max
+     headers_rows = [3, num_lines(@access.headers)].max
+     payload_rows = [3, num_lines(@access.payload)].max
+  %>
+
+  <div class="field">
+    <%= f.label :headers %><br />
+    <%= f.text_area :headers, cols: textarea_cols, rows: headers_rows %>
+  </div>
   <div class="field">
     <%= f.label :payload %><br />
-    <%= f.text_area :payload %>
+    <%= f.text_area :payload, cols: textarea_cols, rows: payload_rows %>
   </div>
   <div class="actions">
     <%= f.submit %>
